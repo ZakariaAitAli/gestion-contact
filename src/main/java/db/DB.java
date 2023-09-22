@@ -38,10 +38,10 @@ public class DB {
     }
 
     public void insert(User user) {
-        String username = user.getUsername();
+        String username = user.getUserName();
         connect();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO user (username) VALUES (?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO user (userName) VALUES (?)");
             preparedStatement.setString(1, username);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -56,9 +56,9 @@ public class DB {
         connect();
         try {
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT username FROM user");
+            ResultSet resultSet = statement.executeQuery("SELECT userName FROM user");
             if (resultSet.next()) {
-                username = resultSet.getString("username");
+                username = resultSet.getString("userName");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -71,7 +71,7 @@ public class DB {
     public void updateUsername(String username1 , String username2) {
         connect();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE user SET username=? WHERE username =?");
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE user SET userName=? WHERE userName =?");
             preparedStatement.setString(1, username1);
             preparedStatement.setString(2, username2); 
             preparedStatement.executeUpdate();
@@ -85,7 +85,7 @@ public class DB {
     public void removeContact(String username) {
         connect();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM user WHERE username=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM user WHERE userName=?");
             preparedStatement.setString(1, username);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
