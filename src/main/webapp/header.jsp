@@ -20,10 +20,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.do">Home</a>
+                    <a class="nav-link" href="indexServlet">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Saisie.do">Saisie</a>
+                    <a class="nav-link" href="saisie.jsp">Saisie</a>
                 </li>
             </ul>
         </div>

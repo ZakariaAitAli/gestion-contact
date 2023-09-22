@@ -2,7 +2,7 @@ package beans;
 
 public class Contact {
 
-		private Long id;
+		private int id;
 		private String nom;
 		private String prenom;
 		private String NumeroTele;
@@ -10,16 +10,17 @@ public class Contact {
 			super();
 			// TODO Auto-generated constructor stub
 		}
-		public Contact(String nom, String prenom, String numeroTele) {
+		public Contact(int id, String nom, String prenom, String numeroTele) {
 			super();
+			this.id = id;
 			this.nom = nom;
 			this.prenom = prenom;
 			NumeroTele = numeroTele;
 		}
-		public Long getId() {
+		public int getId() {
 			return id;
 		}
-		public void setId(Long id) {
+		public void setId(int id) {
 			this.id = id;
 		}
 		public String getNom() {

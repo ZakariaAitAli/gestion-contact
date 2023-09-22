@@ -1,4 +1,4 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,38 +13,31 @@
 
 </head>
 <body>
-<%@include file="header.jsp" %>
-<p></p>
+	<%@include file="header.jsp"%>
+	<p></p>
 	<div class="container">
 		<div class="col-md-6 col-xs-12 col-sm-6 offset-md-3">
 			<div class="card border-primary">
 
 
-				<div class="card-header bg-primary text-white ">Modification de 
-                      contacts    </div>
+				<div class="card-header bg-primary text-white ">Modification
+					de contacts</div>
 				<div class="card-body">
-		<form action="UpadteContact.do" method="post">
-		<div class="from-group">
-		<label class="control-label">Nom</label>
-		<input type="text" name="nom" class="form-control"/>
-		<span></span>
-			</div>
-			<div class="from-group">
-		<label class="control-label">Prenom</label>
-		<input type="text" name="prenom" class="form-control"/>
-		<span></span>
-			</div>
-			<div class="from-group">
-		<label class="control-label">Numero de Telephone</label>
-		<input type="text" name="numeroTele" class="form-control"/>
-		<span></span>
-			</div>
-			<div>
-			<button type="submit" class="btn btn-primary">Ajouter</button>
+					<form action="editServlet" method="post">
+						<div class="from-group">
+							<label class="control-label">New Numero de Telephone</label> <input
+								type="text" name="numeroTele" class="form-control" /> <span></span>
+						</div>
+						<%
+						String id = request.getParameter("id");
+						%>
+						<input type="hidden" name="id" value="<%=id%>">
+						<div>
+							<button type="submit" class="btn btn-primary">Modifier</button>
+						</div>
+						</form>
+				</div>
 			</div>
 		</div>
-		</div>
-		</div>
-
 </body>
 </html>
